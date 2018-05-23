@@ -6,11 +6,11 @@ Toda la información que se expone a continuación sólo tiene fines educativos 
 
 # Github
 
-Existe una versión de este contenido en [Github](https://github.com/rafaeljimenez85/kmsServer)
+Existe una versión de este contenido en [Github](https://github.com/rafaeljimenez85/NAS-MiniCorp)
 
 ## Documentación
 
-Toda la documentación de esta disponible en [GitBook](https://legacy.gitbook.com/book/rafaeljimenezrey/kms-server/details)
+Toda la documentación de esta disponible en [GitBook](https://legacy.gitbook.com/book/rafaeljimenezrey/nas-minicorp/details)
 
 # Licencia
 
