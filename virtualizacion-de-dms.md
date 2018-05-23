@@ -19,34 +19,34 @@ A continuación, indicare los pasos para la virtualización necesarios para pode
 
 + Descargar el software indicado en los requisitos previos
 
-+ Crearemos una nueva carpeta en la ruta donde crear las máquinas virtuales de VMware con el nombre que le daremos a la máquina virtual en mi caso `NAS-LAB-1`
++ Crearemos una nueva carpeta en la ruta donde crear las máquinas virtuales de VMware con el nombre que le daremos a la máquina virtual en mi caso `NAS-LAB-1`  
 	![alt text](/DSM-Virtual/images/paso1.jpg)
 
-+ Dentro la carpeta anterior crearemos una nueva carpeta con el nombre `file` en la que pegaremos todo el software descargado en los requisitos previos
++ Dentro la carpeta anterior crearemos una nueva carpeta con el nombre `file` en la que pegaremos todo el software descargado en los requisitos previos  
 	![alt text](/DSM-Virtual/images/paso2.jpg)
 
-+ Abriremos la herramienta VMware y crearemos una nueva máquina virtual
++ Abriremos la herramienta VMware y crearemos una nueva máquina virtual  
 	![alt text](/DSM-Virtual/images/paso3.jpg)
 
-+ Escogeremos `Custom (advanced)`
++ Escogeremos `Custom (advanced)`  
 	![alt text](/DSM-Virtual/images/paso4.jpg)
 
-+ En este paso es muy importante la compatibilidad de Hardware (Workstation 12.x), en caso de usar la versión 13.x también será necesario.
++ En este paso es muy importante la compatibilidad de Hardware (Workstation 12.x), en caso de usar la versión 13.x también será necesario.  
 	![alt text](/DSM-Virtual/images/paso5.jpg)
 
-+ Escogemos la opción de Instalar el SO luego
++ Escogemos la opción de Instalar el SO luego  
 	![alt text](/DSM-Virtual/images/paso6.jpg)
 
-+ Escogemos que virtualizaremos `Linux` con una versión `Other Linux 3.x kernel 64-bit`
++ Escogemos que virtualizaremos `Linux` con una versión `Other Linux 3.x kernel 64-bit`  
 	![alt text](/DSM-Virtual/images/paso7.jpg)
 
-+ Le damos el nombre que deseamos a la máquina virtual y le indicamos donde se virtualizara, tiene que ser la misma en que creamos en el paso 2
++ Le damos el nombre que deseamos a la máquina virtual y le indicamos donde se virtualizara, tiene que ser la misma en que creamos en el paso 2  
 	![alt text](/DSM-Virtual/images/paso8.jpg)
 
-+ Escogemos `1 procesador con 2 Cores`
++ Escogemos `1 procesador con 2 Cores`  
 	![alt text](/DSM-Virtual/images/paso9.jpg)
 
-+ Escogemos 2GB de RAM  
++ Escogemos 2GB de RAM    
     ![alt text](/DSM-Virtual/images/paso10.jpg)
 
 + Usaremos la red en `modo NAT`  
