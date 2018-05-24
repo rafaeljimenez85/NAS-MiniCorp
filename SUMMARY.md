@@ -2,6 +2,7 @@
 
 * [Descargo de resposabilidad](README.md)
 * [Documentacion NASMiniCorp](documentacion-nasminicorp.md)
+  * [Introduccion](documentacion-nasminicorp/introduccion.md)
   * [Entendiendo Synology DSM](documentacion-nasminicorp/entendiendo-synology-dsm.md)
   * [Virtualizacion de DSM](documentacion-nasminicorp/virtualizacion-de-dsm.md)
   * [Pasos Post Virtualizacion](documentacion-nasminicorp/pasos-post-virtualizacion.md)
