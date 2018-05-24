@@ -1,6 +1,5 @@
 # Summary
 
-* [Descargo de resposabilidad](README.md)
 * [1. Introduccion](introduccion.md)
 * [2. Entendiendo Synology DSM](entendiendo-dms.md)
 * [3. Virtualización de DMS](virtualizacion-de-dms.md)
@@ -10,4 +9,6 @@
 * [7. Configuración de las Herramientas](configuracion-de-las-herramientas.md)
 * [8. Conclusiones](conclusiones.md)
 * [9. Bibliografia](bibliografia.md)
+* [Documentacion NAS-MiniCorp](documentacion-nas-minicorp.md)
+* [Descargo de resposabilidad](README.md)
 
