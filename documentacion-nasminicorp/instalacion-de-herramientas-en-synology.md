@@ -1,4 +1,4 @@
-# Instalación de herramientas de Micro Empresa.
+# 6. Instalación de herramientas de Micro Empresa.
 
 Tras realizar los pasos del hardening del sistema realizaremos la instalación de las herramientas que usaremos para prestar servicio y seguridad a la micro empresa. El listado de herramientas que instalaremos es el siguiente:
 

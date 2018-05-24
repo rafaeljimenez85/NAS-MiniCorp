@@ -1,4 +1,4 @@
-# Introducción
+# 1. Introducción
 
 Con este trabajo busco demostrar que por un precio razonable una Micro PYME de no más de 8 - 10 empleados pueden pasar de no tener un entrono nada seguro a tener una seguridad muy aceptable para la red y los empleados de la misma, Tras analizar diferentes herramientas, opte por usar un NAS **Synology DS3617xs** que tiene las características que se definen al final de la página.
 
@@ -20,11 +20,13 @@ A lo largo de este trabajo se definirá de manera muy realista un montaje desde 
 	- _Mail Server_
 	- _Chat Server_
 	- _Web Server_
++ **Otras Herramientas**
+	- _Servidor NTP_
 
 Sin más dilación empecemos con el trabajo de campo.
 
 
-## Tabla de especificaciones de Synology DS3617xs
+## 1.2. Tabla de especificaciones de Synology DS3617xs
 
 
 <div class="table_wrap">

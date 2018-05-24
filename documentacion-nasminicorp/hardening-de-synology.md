@@ -1,10 +1,10 @@
-# Hardening de Synology
+# 5. Hardening de Synology
 
 Como era de esperar, Unos de los pasos más importantes en la configuración de nuestro NAS será segurizarlo para evitar lo máximo posible que nuestro NAS sea víctima de ataques ya que contendrá herramientas muy importantes.
 
 A continuación, os guiare por los pasos básicos para la seguridad de nuestro NAS Synology.
 
-## Actualización a la Ultima Versión de DSM
+## 5.1. Actualización a la Ultima Versión de DSM
 
 Como ya sabéis uno de los pasos más importantes para segurizar nuestro NAS será la instalación de la última versión de nuestro OS DSM, que actualmente tras la virtualización está en la versión **6.1-15047** por lo cual necesitamos actualizarlo a la última versión que es la **6.1.6-15266** de para aplicar todos los parches de seguridad y correcciones de Bugs. Para ello seguiremos los siguientes pasos:
 
@@ -42,7 +42,7 @@ Como ya sabéis uno de los pasos más importantes para segurizar nuestro NAS ser
 
 ![alt text](/DSM-Virtual/images/paso54.jpg)
 
-## Cambio de puertos.
+## 5.2. Cambio de puertos.
 Como es habitual en el hardening de un sistema, el cambio de puertos por defecto es una muy buena práctica, por ello vamos a realizar el cambio de puertos de HTTP y HTTPS de nuestro synology para de esta manera dificultar cualquier ataque.
 
 Para realizar el cambio de estos puertos realizaremos los siguientes pasos:
@@ -57,12 +57,12 @@ Para realizar el cambio de estos puertos realizaremos los siguientes pasos:
 
 ![imagen](/DSM-Virtual/images/CambioPuertos.jpg)
 
-## Apartado de Seguridad
+## 5.3. Apartado de Seguridad
 A continuación, vamos a navegar por el apartado de seguridad dentro del `Panel de control` de synology para habilitar las opciones de seguridad que más beneficien.
 
 ![alt text](/DSM-Virtual/images/Seguridad.jpg)
 
-### Pestaña de Seguridad.
+### 5.3.1 Pestaña de Seguridad.
 En esta pestaña existen diferentes opciones, que detallaremos a continuación
 
 + **Temporizador de cierre de sesión (minutos):** la sesión de los usuarios se cerrará automáticamente en DSM si permanecen inactivos durante el periodo de tiempo especificado aquí. Introduzca cualquier valor entre 1 y 65535.
@@ -83,7 +83,7 @@ En mi caso lo he dejado de la siguiente manera:
 
 ![alt text](/DSM-Virtual/images/pestanaSeguridad.jpg)
 
-### Pestaña Cortafuegos (Firewall)
+### 5.3.2 Pestaña Cortafuegos (Firewall)
 En esta pestaña tenemos la opción para habilitar el firewall del Synology que por defecto viene desactivado, pero por supuesto que nosotros habilitaremos y como ya sabemos la primera regla será un `deny all`...
 
 A continuación, daremos os guiare por los pasos a seguir para la correcta configuración inicial, aunque hay que tener en cuenta que más adelante habilitaremos nuevas reglas a medida que avancemos en este laboratorio.
@@ -135,15 +135,15 @@ A continuación, daremos os guiare por los pasos a seguir para la correcta confi
 
 ![alt text](/DSM-Virtual/images/cortafuegos10.jpg)
 
-### Pestaña Protección
+### 5.3.4. Pestaña Protección
 En esta pestaña tenemos que habilitar la protección DoS (Denegación de servicio) que ayuda a evitar ataques maliciosos a través de Internet.
 
 ![alt text](/DSM-Virtual/images/Proteccion1.jpg)
 
-### Pestaña cuenta.
+### 5.3.5. Pestaña cuenta.
 Esta pestaña nos ayudara a proteger las cuentas de ataques externos.
 
-#### 1. Bloqueo automático
+#### 5.3.5.1. Bloqueo automático
 La función de bloqueo automático ayuda a mejorar la seguridad de su Synology NAS bloqueando las direcciones IP de clientes con demasiados intentos de conexión fallidos. Esto ayuda a reducir el riesgo de que se fuerce la entrada a cuentas con ataques de fuerza bruta.
 
 También puede crear y administrar una lista de permisos para agregar direcciones de IP de confianza, o una lista de bloqueo para evitar siempre que determinadas direcciones IP inicien sesión.
@@ -153,7 +153,7 @@ También puede crear y administrar una lista de permisos para agregar direccione
 
 También hay que tener en cuenta que para este laboratorio no será necesario, pero será muy interesante que a nivel profesional se configuraran correctamente las listas de bloqueos por direcciones IP.
 
-#### 2. Protección de la cuenta
+#### 5.3.5.2. Protección de la cuenta
 La protección de la cuenta ayuda a mejorar la seguridad de su Synology NAS protegiendo las cuentas de clientes que no sean de confianza con demasiados intentos de conexión fallidos. Esto ayuda a reducir el riesgo de que se fuerza la entrada a cuentas con ataques de fuerza bruta.
 
 > Nota
@@ -181,18 +181,18 @@ Las configuraciones de este este apartado queda de la siguiente forma:
 
 ![alt text](/DSM-Virtual/images/Cuenta1.jpg)
 
-### Pestaña Certificado
+### 5.3.6. Pestaña Certificado
 Se puede usar un certificado para proteger los servicios SSL de Synology NAS, como por ejemplo web (todos los servicios HTTPS), correo o FTP. El hecho de tener un certificado permite a los usuarios validar la identidad de un servidor y del administrador antes de enviar cualquier información confidencial.
 
 Mas adelante realizaremos los pasos de creación de un certificado **Let's Encrypt** a la hora de configurar las herramientas.
 
-### Pestaña Avanzado
+### 5.3.7. Pestaña Avanzado
 En esta pestaña podemos configurar lo siguiente:
 
-#### Compresión HTTP
+#### 5.3.7.1. Compresión HTTP
 Puede habilitar Compresión HTTP para Synology NAS. Al reducir el ancho de banda del tráfico de red, puede aumentar la velocidad de carga de las páginas web.
 
-#### Perfil TLS/SSL
+#### 5.3.7..2 Perfil TLS/SSL
 Puede elegir el nivel de seguridad de las conexiones HTTPS cifradas. Ofrece los 3 niveles siguientes:
 
 + **_Compatibilidad con versiones actuales:_** solo compatible con los dispositivos móviles y exploradores más recientes.
@@ -203,7 +203,7 @@ La configuración de esta pestaña quede de la siguiente manera:
 
 ![alt text](/DSM-Virtual/images/Avanzado1.jpg)
 
-## Apartado Red
+## 5.4. Apartado Red
 Por último, en las configuraciones de seguridad habilitaremos las redirecciones http a https para que solo se pueda conectar a través de https a la web del NAS, para ello seguiremos los siguientes pasos
 
 + Abriremos el `Panel de control`
@@ -216,7 +216,7 @@ Por último, en las configuraciones de seguridad habilitaremos las redirecciones
 
 Tras aplicar estos cambios el servidor web del NAS se reiniciará y ahora, aunque intentemos acceder por HTTP nos redireccionara a HTTPS. Aunque ahora tenemos un problema con el certificado dado que nos indica que no tiene un certificado valido.
 
-### Certificados de navegación.
+### 5.4.1. Certificados de navegación.
 Se puede usar un certificado para proteger los servicios SSL de Synology NAS, como por ejemplo web (todos los servicios HTTPS), correo o FTP. El hecho de tener un certificado permite a los usuarios validar la identidad de un servidor y del administrador antes de enviar cualquier información confidencial.
 
 Dado que es necesario un dominio para crear los certificados lo que hice fue comprar el dominio **_tripodecorp.black_** en el proveedor OVH que también tiene DDNS (Dinamic Domain Name System) y así podremos acceder a nuestro NAS desde Internet. Vosotros podéis utilizar cualquiera de los soportados pode Synology

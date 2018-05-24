@@ -1,3 +1,5 @@
+# 2. Entendiendo Synology DSM
+
 El Synology NAS es un servidor de almacenamiento conectado en red que sirve como centro de intercambio de archivos dentro de su intranet. Además, se ha diseñado especialmente para diversos fines y le permitirá realizar las siguientes tareas con Synology DiskStation Manager basado en web (DSM):
 
 ## Almacenar y compartir archivos por Internet

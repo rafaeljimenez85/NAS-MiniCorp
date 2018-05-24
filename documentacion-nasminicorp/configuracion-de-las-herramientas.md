@@ -1,4 +1,8 @@
-# Configuración de Directory Server
+# 7. Instalación de herramientas en Synology
+
+A continuacion procederemos a configurar una a una las herramientas antes descritas.
+
+## 7.1  Configuración de Directory Server
 
 Como hemos visto antes en la esta herramienta este Basada en LDAP3 y nos ayudara tener un control de las cuentas de usuario de nuestra red corporativa. Para configurarlo realizaremos los siguientes pasos:
 
@@ -74,7 +78,7 @@ Los usuarios que he creado para este son los siguientes:
 ![imagen](/DSM-Virtual/images/DirectoryServer9.jpg)
 
 
-## Configuración de LDAP en el NAS
+### 7.1.2 Configuración de LDAP en el NAS
 
 + Ahora necesitamos conectar nuestro NAS al LDAP para poder usar estos usuarios por ejemplo para la configuración de usuarios accederán a la VPN. Para ello necesitaremos abrir el `Panel de control` y dirigirnos al apartado `Dominio\\LDAP`
 
@@ -96,7 +100,7 @@ Los usuarios que he creado para este son los siguientes:
 
 
 
-# Configuración del Servidor NTP
+## 7.2. Configuración del Servidor NTP
 
 Podemos configurar nuestro sistema con servidor NTP (Network Time Protocol), para que así todo nuestro entorno tenga la misma hora, para ello realizaremos los siguientes pasos:
 
@@ -110,7 +114,7 @@ Podemos configurar nuestro sistema con servidor NTP (Network Time Protocol), par
 ![imagen](/DSM-Virtual/images/NTP1.jpg)
 
 
-# Configuración de Proxy Server
+## 7.3. Configuración de Proxy Server
 Para la configuración del Proxy Server realizaremos los siguientes pasos:
 
 + Abriremos la aplicación desde el botón de aplicaciones del NAS
@@ -144,7 +148,7 @@ Para la configuración del Proxy Server realizaremos los siguientes pasos:
 
 
 
-# Configuración del Servidor DHCP
+## 7.4. Configuración del Servidor DHCP
 
 Vamos a configurar nuestro NAS con Servidor DHCP para que de esta manera funciona correctamente la autodetección de proxy, para ello vamos a realizar los siguientes pasos.
 
@@ -169,7 +173,7 @@ Vamos a configurar nuestro NAS con Servidor DHCP para que de esta manera funcion
 ![imagen](/DSM-Virtual/images/DHCPServer3.jpg)
 
 
-# Configuración de VPN Server
+## 7.5. Configuración de VPN Server
 
 Ahora vamos a habilitar el servicio de VPN para que nuestros empleados puedan entrar vía VPN a la red y de esta manera evitar que se instalen herramientas de acceso remoto. Para ello vamos a realizar los siguientes pasos:
 
@@ -200,7 +204,7 @@ Ahora vamos a habilitar el servicio de VPN para que nuestros empleados puedan en
 ![imagen](/DSM-Virtual/images/VPNServer3.jpg)
 
 
-# Configuración del servidor Radius
+## 7.8. Configuración del servidor Radius
 
 Lo siguiente será configurar nuestro servidor RADIUS para poder utilizar de esta manera WPA2-Enterprise en nuestra Wifi, para ello realizaremos los siguientes pasos:
 
@@ -210,7 +214,7 @@ Lo siguiente será configurar nuestro servidor RADIUS para poder utilizar de est
 
 ![imagen](/DSM-Virtual/images/RadiusServer1.jpg)
 
-## Configuración de clientes Radius
+### 7.8.1 Configuración de clientes Radius
 
 La página de Clientes contiene una lista de clientes, como por ejemplo enrutadores inalámbricos o servidores VPN, a los que se permite realizar solicitudes al RADIUS Server de autenticaciones, autorizaciones y contabilidad. Para cada cliente deberá introducir una dirección IP, junto con una secret key, que es una cadena de texto utilizada como contraseña entre los clientes RADIUS y el RADIUS Server. Las claves secretas se deben configurar tanto en el cliente como en el RADIUS Server.
 
@@ -233,7 +237,7 @@ Crearemos como cliente nuestro router para de esta manera poder utilizar los ben
 
 
 
-# Configuración de MailPlus Server
+## 7.9. Configuración de MailPlus Server
 
 Vamos a configurar el servidor de correos de la empresa con MailPlus Server, y para ello seguiremos los siguientes pasos:
 
@@ -261,7 +265,7 @@ Vamos a configurar el servidor de correos de la empresa con MailPlus Server, y p
 
 ![imagen](/DSM-Virtual/images/MailPlusServer5.jpg)
 
-## Configuración de Servicios
+### 7.9.1.  Configuración de Servicios
 
 Ahora vamos a configurar los servicios del MailPlus Server:
 
@@ -270,7 +274,7 @@ Ahora vamos a configurar los servicios del MailPlus Server:
 ![imagen](/DSM-Virtual/images/MailPlusServer6.jpg)
 
 
-## Configuraciones de Seguridad
+### 7.9.2. Configuraciones de Seguridad
 
 Ahora configuraremos todos los apartados de Seguridad.
 
@@ -287,13 +291,13 @@ Ahora configuraremos todos los apartados de Seguridad.
 ![imagen](/DSM-Virtual/images/MailPlusServer9.jpg)
 
 
-## Configuración de Cuentas
+### 7.9.3. Configuración de Cuentas
 
 Aquí habilitaremos las cuentas que se necesitan para el correo. La aplicación solos nos deja gestionar 5 cuentas de correo, en caso de necesitar más será necesario la adquisición de una licencia que podéis consultar aquí: https://www.synology.com/es-es/products/MailPlus_License
 
 ![imagen](/DSM-Virtual/images/MailPlusServer10.jpg)
 
-## Configuración del Portal de aplicaciones.
+### 7.9.4. Configuración del Portal de aplicaciones.
 
 Para configurar correctamente el acceso al Mail Plus necesitamos configurar el `Portal de aplicaciones` para ellos realizaremos lo siguiente:
 
@@ -316,7 +320,7 @@ Solo nos queda logarnos con nuestro usuario de LDAP et voilà!
 ![imagen](/DSM-Virtual/images/MailPlusPA4.jpg)
 
 
-# Configuración de Chat
+## 7.10. Configuración de Chat
 
 También instalaremos la aplicación de chat de Synology, servirá para acelerar las comunicaciones internas. Para la instalación seguiremos los siguientes pasos:
 
@@ -354,7 +358,7 @@ Solo nos queda logarnos con nuestro usuario de LDAP et voilà!
 
 
 
-# Web Station.
+## 7.11. Web Station.
 
 Con un host virtual puede configurar varios sitios web en Synology NAS. Se requiere un nombre de dominio para la configuración del host virtual. Cada host virtual puede ser basado en nombre o basado en puerto. Cada sitio web de host virtual requiere un directorio de raíz del documento para el acceso y almacenamiento de archivos.
 
