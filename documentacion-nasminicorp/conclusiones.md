@@ -10,6 +10,6 @@ Por otro lado, también tome la decisión de implementar un par de herramientas 
 
 Tras realizar el trabajo de instalación, configuración y prueba de las herramientas se seguridad descritas a lo largo del trabajo, he llegado a la conclusión de que es completamente posible y razonable la implantación de seguridad un entorno de Micro Pyme utilizando un dispositivo como el NAS de**Synology DS3617xs**. 
 
-También he llegado a la conclusión que no es recomendable este tipo de implementación ya que se trata de una apuesta muy arriesgada el uso de todas las herramientas de nuestra Micro Pyme en un solo dispositivo ya que si dicho dispositivo se cae nuestra Micro Pyme dejaría de funcionar casi por completo ya que no existe ningún tipo de plan de recuperación y contingencia contemplado.
+También he llegado a la conclusión que no es recomendable este tipo de implementación ya que se trata de una apuesta muy arriesgada el uso de todas las herramientas de nuestra Micro Pyme en un solo dispositivo ya que si dicho dispositivo se cae nuestra Micro Pyme dejaría de funcionar casi por completo ya que no existe ningún tipo de plan de recuperación y contingencia contemplado..
 
 
