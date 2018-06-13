@@ -204,6 +204,24 @@ La configuración de esta pestaña quede de la siguiente manera:
 ![alt text](/DSM-Virtual/images/Avanzado1.jpg)
 
 ## 5.4. Apartado Red
+
+### 5.4.1 Interfaz de Red
+En este apartado gestionaremos todas las configuraciones relacionadas con la interzaz de red en esta caso en especifico el interface de red ´LAN´
+
++ Abriremos el `Panel de control`
+
++ Iremos al apartado de RED y posteriormente a la pestaña de `Interfaz de red`
+
++ Selecionaremos la interface `LAN 1` y pulsaremos en editar
+![alt text](/DSM-Virtual/images/LAN1.jpg)
+
++ Iremos a la pestaña `IPv6` 
+
++ En el desplegable `Configuracion IPv6` seleccionaremos desactivado ya que no vamos a realizar uso de IPv6
+![alt text](/DSM-Virtual/images/LAN2.jpg)
+
+
+### 5.4.2 Configuración de DSM
 Por último, en las configuraciones de seguridad habilitaremos las redirecciones http a https para que solo se pueda conectar a través de https a la web del NAS, para ello seguiremos los siguientes pasos
 
 + Abriremos el `Panel de control`
