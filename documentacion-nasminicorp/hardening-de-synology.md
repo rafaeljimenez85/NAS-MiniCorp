@@ -206,18 +206,18 @@ La configuración de esta pestaña quede de la siguiente manera:
 ## 5.4. Apartado Red
 
 ### 5.4.1 Interfaz de Red
-En este apartado gestionaremos todas las configuraciones relacionadas con la interzaz de red en esta caso en especifico el interface de red ´LAN´
+En este apartado gestionaremos todas las configuraciones relacionadas con la interfaz de red, en este caso en específico la interfaz de red ´LAN´
 
 + Abriremos el `Panel de control`
 
 + Iremos al apartado de RED y posteriormente a la pestaña de `Interfaz de red`
 
-+ Selecionaremos la interface `LAN 1` y pulsaremos en editar
++ Seleccionaremos la interface `LAN 1` y pulsaremos en editar
 ![alt text](/DSM-Virtual/images/LAN1.jpg)
 
 + Iremos a la pestaña `IPv6` 
 
-+ En el desplegable `Configuracion IPv6` seleccionaremos desactivado ya que no vamos a realizar uso de IPv6
++ En el desplegable `Configuración IPv6` seleccionaremos desactivado ya que no vamos a realizar uso de IPv6
 ![alt text](/DSM-Virtual/images/LAN2.jpg)
 
 
@@ -278,3 +278,43 @@ Una vez ya tenemos el domino creado ahora nos queda la parte de creación de un 
 + Pasados unos cuantos segundos ya nos otorgó el certificado tal como aparece en el siguiente pantallazo.
 
 ![imagen](/DSM-Virtual/images/Certificado6.jpg)
+
+## 5.5 Deshabilitar servicios innecesarios
+
+Es necesario deshabilitar servicios que no utilizaremos para disminuir lo máximo posible la superficie de ataque. y para ello seguiremos los siguientes pasos:
+
++ Abriremos el `Panel de control` y iremos al apartado `Terminal y SNMP`
+
++ Iremos a la pestaña `Terminal` y deshabilitaremos el acceso ssh y telnet a nuestro dispositivo.
+![imagen](/DSM-Virtual/images/Terminal1.jpg)
+
+> **NOTA:** En caso de ser necesario un acceso a terminal se desaconseja el uso de telnet y el caso de habilitar ssh tener en cuenta dos consejos
+> + Cambiar el puerto por defecto de ssh
+> + Crear una regla en el firewall específica para ssh y así evitar el acceso al mismo desde internet 
+
++ Ahora, iremos a la pestaña `SNMP` y deshabilitaremos el SNMP.
+![imagen](/DSM-Virtual/images/SNMP1.jpg)
+
+> **NOTA:** En caso de ser necesario un acceso a SNMP hay tener en cuenta dos consejos
+> + No utilizar SNMP con versión inferior a V3
+> + Crear una regla en el firewall específica para SNMP y así evitar el acceso al mismo desde internet
+
+Tras realizar estos pasos, continuamos con el proceso para deshabilitar servicios innecesarios.
+
++ Vamos al apartado `Servicios de Archivos`
+
++ Vamos la pestaña `SMB/AFP/NFS` donde deshabilitaremos todos los servicios ya que en nuestro caso no utilizaremos ninguno.
+![imagen](/DSM-Virtual/images/SMB1.jpg)
+
++ Vamos a la pestaña `FTP` y al igual que en el caso anterior deshabilitamos los servicios de FTP, FTPS y SFTP
+![imagen](/DSM-Virtual/images/FTP1.jpg)
+
++ Vamos a la pestaña `TFTP` y al igual que en el caso anterior deshabilitamos el servicio.
+![imagen](/DSM-Virtual/images/TFTP1.jpg)
+
++ Vamos a la pestaña `rsync` y al igual que en el caso anterior deshabilitamos el servicio.
+![imagen](/DSM-Virtual/images/rsync1.jpg)
+
++ Vamos a la pestaña `Avanzado` y al igual que en el caso anterior deshabilitamos los servicios.
+![imagen](/DSM-Virtual/images/Avanzado2.jpg)
+
