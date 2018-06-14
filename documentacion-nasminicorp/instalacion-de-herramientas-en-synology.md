@@ -31,6 +31,8 @@ Tras realizar los pasos del hardening del sistema realizaremos la instalación d
 
 + **_Chat:_** Chat, un servicio de mensajería instantánea en Synology NAS, proporciona a los usuarios una herramienta eficaz para la comunicación y la gestión de la información. Chat ofrece prestaciones entretenidas como hashtags y reacciones, y también muchas otras características como integración personalizada con webhooks entrantes y salientes.
 
++ **_Hyper Backup_** Hyper Backup permite conservar hasta 65 535 versiones de los datos y minimizar el consumo de almacenamiento gracias a la deduplicación entre versiones. Los datos de las copias de seguridad se almacenan en una base de datos propietaria que puede examinarse, descargarse o restaurarse con facilidad utilizando en plataformas DSM, Windows y Linux un explorador de varias versiones diseñado específicamente.
+
 La instalación de las herramientas antes mencionadas no tiene mayo secreto, lo único que necesitas es abrir el `Centro de paquetes` y pulsar el botón instalar para cada una de las herramientas antes mencionadas:
 
 ![imagen](/DSM-Virtual/images/InstalacionHerramientas.jpg)

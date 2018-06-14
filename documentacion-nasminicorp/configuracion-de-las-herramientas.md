@@ -382,3 +382,153 @@ Lo que haremos en poner la página web de la empresa en esta Web Station. Para e
 Ahora podemos ver nuestra nueva web desde la URL de nuestro NAS
 
 ![imagen](/DSM-Virtual/images/WebStation3.jpg)
+
+## 7.12. Hyper Backup
+
+Con la herramienta `Hyper Backup` podremos realizar las backup incrementales de nuestro NAS en diferentes destinos como pueden ser:
+
++ Otro NAS que tengamos en red
++ rsync
++ OpenStack Swift
++ Azure
++ Amazon S3
++ Dropbox
++ Google Drive 
++ Y otros
+
+En este caso vamos a realizar copias de seguridad en 2 sitios diferentes para de esta manera aprender ambos métodos
+
++ Otros NAS en red
++ Google Drive
+
+### 7.12.1 Backup en otro NAS en red
+
+#### 7.12.1.1 Prerrequisito de Hyper Backup en dispositivo remoto.
+
+Para el funcionamiento de **Hyper Backup** en un dispositivo remoto es necesario que dicho dispositivo remoto tenga instalado la herramienta `Hyper Backup Vault` por los cual será necesaria su instalación y configuración previa. Para ello realizaremos los siguientes pasos:
+
++ Abrimos el `Centro de paquetes` en el NAS remoto que albergara las copias de seguridad
+
++ Buscamos entre las herramientas de backup `Hyper Backup Vault` y la instalamos.
+
+![imagen](/DSM-Virtual/images/hyperBackupVault1.jpg)
+
++ Tras la instalación buscamos la herramienta en el menú de aplicación y así empezamos con su configuración
+
+![imagen](/DSM-Virtual/images/hyperBackupVault2.jpg)
+
++ Verificamos que no existe ningún destino de backup creado desde ningún NAS todavía.
+
+![imagen](/DSM-Virtual/images/hyperBackupVault3.jpg)
+
++ Para la correcta gestión y organización de los datos procedemos al crear una nueva carpeta donde guardaremos los Backups del NAS `NAS-LAB-1`. Para ello abrimos la herramienta llamada `File Station` desde el menú de aplicación
+
+![imagen](/DSM-Virtual/images/hyperBackupVault4.jpg)
+
++ Creamos una nueva `carpeta compartida` que la llamaremos `NAS-LAB-1-BK` que es donde realizaremos los Backups
+
+![imagen](/DSM-Virtual/images/hyperBackupVault5.jpg)
+
+![imagen](/DSM-Virtual/images/hyperBackupVault6.jpg)
+
++ Tras Finalizar estos pasos la carpeta donde vamos a realizar los backups del NAS-LAB-1 está creada correctamente
+
+![imagen](/DSM-Virtual/images/hyperBackupVault7.jpg)
+
+
+#### Configuración de backup a Dispositivo en red
+
++ Nada más instalar la herramienta `Hyper Backup` cuando la abrimos por primera vez nos solicita información de cómo se desean realizar las copias, en este caso elegiremos las copias en `Dispositivo NAS Remoto`
+
+![imagen](/DSM-Virtual/images/hyperBackup1.jpg)
+
++ Rellenaremos los datos que nos solicita del NAS donde realizaremos las copias de seguridad.
+
+![imagen](/DSM-Virtual/images/hyperBackup2.jpg)
+
++ Seleccionamos todas las carpetas de la que deseamos tener copia de seguridad
+
+![imagen](/DSM-Virtual/images/hyperBackup3.jpg)
+
++ Ahora nos solicitara que herramientas deseamos tener en el backup
+
+![imagen](/DSM-Virtual/images/hyperBackup4.jpg)
+
++ Ahora programaremos la tarea a nuestro gusto.
+
+![imagen](/DSM-Virtual/images/hyperBackup5.jpg)
+
++ Ahora configuraremos la rotación de los backups:
+
+> **Nota:** Hay que tener en cuenta lo siguiente a la hora de elegir el sistema de rotado:
+>
+> + **_A partir de las versiones más recientes:_** elimina las primeras versiones de copia de seguridad cuando las versiones disponibles superan el número definido.
+>
+> + **_Smart Recycle:_** el sistema conservará todas las versiones de copia de seguridad hasta que se alcance el número de versiones especificado. Cuando se active la rotación, el sistema rotará primero aquellas versiones que no cumplan alguna de las condiciones; si todas las versiones existentes cumplen las condiciones que se enumeran a continuación, el sistema rotará la primera versión:
+>	+ Versiones cada hora desde las últimas 24 horas: se conserva la versión más reciente creada cada hora.
+>	+ Versiones diarias desde hace 1 día a hace 1 mes: se conserva la versión más reciente creada cada día.
+>	+ Versiones semanales después de 1 mes: se conserva la versión más reciente creada cada semana.
+> + **Política de retención personalizada:** puede añadir hasta un máximo de siete reglas para el periodo de retención y el intervalo de versiones según sus necesidades. Por ejemplo, si se define un periodo de retención de un mes y un intervalo de versiones de una semana, eso significaría que se conservaría una versión de la copia de seguridad por semana y cuatro versiones de la copia de seguridad en total.
+
+![imagen](/DSM-Virtual/images/hyperBackup6.jpg)
+
++ Tras Este proceso verificamos que la copia de Seguridad se está realizando.
+
+![imagen](/DSM-Virtual/images/hyperBackup7.jpg)
+
+### 7.12.2 Copia de seguridad en Google Drive
+
+Para realizar un backup con `Hiper Backup` en drive hay que seguir los siguientes pasos:
+
++ Abrir la herramienta de `Hiper Backup`
+
+![imagen](/DSM-Virtual/images/hyperBackup8.jpg)
+
++ Pulsaremos en el botón `+` que se encuentra en la esquina inferior izquierda y pulsaremos el botón `Tarea de copia de seguridad de datos`
+
+![imagen](/DSM-Virtual/images/hyperBackup9.jpg)
+
++ Seleccionaremos `Google Drive`
+
+![imagen](/DSM-Virtual/images/hyperBackup10.jpg)
+
++ Nos abre una nueva ventana y nos solicitara con que cuenta deseamos realizar la sincronización.
+
+![imagen](/DSM-Virtual/images/hyperBackup11.jpg)
+
++ Tras seleccionar la cuenta solicitara permisos para Ver y Administrar Archivos en el drive
+
+![imagen](/DSM-Virtual/images/hyperBackup12.jpg)
+
++ También no indicara que Hyper backup requiere privilegios
+
+![imagen](/DSM-Virtual/images/hyperBackup13.jpg)
+
++ Ahora como no teníamos ninguna carpeta creada en el Drive para realizar los backup desde la misma configuración de Hyper Backup Crearemos una nueva llamada `NAS-LAB-1-BK`
+
+![imagen](/DSM-Virtual/images/hyperBackup14.jpg)
+
++ Rellenaremos los campos solicitados
+
+![imagen](/DSM-Virtual/images/hyperBackup15.jpg)
+
++ Seleccionamos las carpetas que deseamos tener en el Backup
+
+![imagen](/DSM-Virtual/images/hyperBackup16.jpg)
+
++ Seleccionamos las aplicaciones de la que deseamos realizar backup
+
+![imagen](/DSM-Virtual/images/hyperBackup17.jpg)
+
++ Seleccionamos la fecha y hora en las que se realizar el backup y la verificación de la integridad
+
+![imagen](/DSM-Virtual/images/hyperBackup18.jpg)
+
++ Habilitamos la rotación de backup con 30 copias
+
+![imagen](/DSM-Virtual/images/hyperBackup19.jpg)
+
+
++ Como podemos observar la copia a drive se ha realizado correctamente
+
+![imagen](/DSM-Virtual/images/hyperBackup20.jpg)
