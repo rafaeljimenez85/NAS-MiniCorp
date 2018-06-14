@@ -318,3 +318,114 @@ Tras realizar estos pasos, continuamos con el proceso para deshabilitar servicio
 + Vamos a la pestaña `Avanzado` y al igual que en el caso anterior deshabilitamos los servicios.
 ![imagen](/DSM-Virtual/images/Avanzado2.jpg)
 
+## 5.6 Notificaciones
+
+Aunque no forma parte específica del hardening de un sistema incluimos las notificaciones del sistema, para poder estar informado en todo momento de cualquier anomalía del sistema y poder tener una pronta reacción ante cualquier aviso. Par configurar las notificaciones realizaremos los siguientes pasos:
+
+### 5.6.1 Notificación por correo
+
++ Abrimos el `Panel de control` y nos vamos al apartado Notificaciones
+
++ Vamos a la pestaña `Correo Electrónico`, en el configuraremos una cuenta alternativa a la de nuestra micro empresa, ya que como veremos más adelante, nuestro servidor de correo estará en este mismo NAS y en caso de fallo del sistema no enviaría el correo.
+
++ En este caso configuramos una cuenta de Gmail para que realice el envió y la misma cuenta para que reciba estos correos. En la configuración de nuestra cuenta alternativa tenemos establecido un reenvió de los correos a nuestra cuenta principal así que en caso de un funcionamiento correcto no necesitaremos estar pendiente de la cuenta alternativa.
+![imagen](/DSM-Virtual/images/Notificacion1.jpg)
+
++ Realizamos una prueba de envió y verificamos que está configurado correctamente ya que nos llega a los 2 buzones de correo.
+![imagen](/DSM-Virtual/images/Notificacion2.jpg)
+![imagen](/DSM-Virtual/images/Notificacion3.jpg)
+
+### 5.6.2 Notificación por SMS
+
++ Lo primero será abrirse una cuenta en www.clickatell.com para poder utilizar el envío de SMS desde esa plataforma.
+![imagen](/DSM-Virtual/images/Clickatell.jpg)
+
++ Vamos a la pestaña `SMS` y configuramos los datos de nuestra cuenta de clickatell
+![imagen](/DSM-Virtual/images/Clickatell.jpg)
+
++ Lo único necesario para el envío de SMS será pagar los paquetes de SMS que no son muy caros aproximadamente 200 SMS por 10 euros
+
+### 5.6.3 Notificaciones Push
+Esta opción nos permitirá que nos envié correos desde el servidor central de Synology y también el envío de notificaciones push a nuestros dispositivos móviles y navegadores.
+
++ Para utilizar la función de envío de correos mediante el servidor de Synology y el envío de notificaciones push necesitas crearte una cuenta synology en el apartado `QuickConenect` --> `General` --> `Iniciar sesión o registrar una cuenta Synology`
+
++ Para sincronizar tu móvil con el NAS para recibir notificaciones push será necesario descargarte la app `DS Finder` y logarte con ella en el NAS y activar las notificaciones
+
+![imagen](/DSM-Virtual/images/push4.jpg)
+
++ Para recibir notificaciones push mediante el navegador necesitas instalar un plugin en el mismo, este plugin puedes conseguirlo presionando el botón `Habilitar las notificaciones del explorador` en la pestaña de push dentro de `Panel de Control`
+
+![imagen](/DSM-Virtual/images/push7.jpg)
+
+La configuración final queda de la siguiente manera:
+
+![imagen](/DSM-Virtual/images/push1.jpg)
+
+### 5.6.4 Avanzado
+
+En esta pestaña encontrareis todas las notificaciones que desde el sistema DSM pueden ser enviada por los tres métodos anteriores, hay que tener en cuenta que se puede editar cualquier mensaje y otros factores a tener en cuenta es que los envíos de SMS y Push solo envían el texto del asunto, pero por correo electrónico envía el contenido.
+
+![imagen](/DSM-Virtual/images/Avanzado3.jpg)
+
+## 5.7. Cifrado de carpetas y gestión de claves de cifrado.
+
+Como parte del Hardening también veremos la creación de carpetas cifradas usando el almacén de claves y para ello es fundamental tener un dispositivo de almacenamiento USB conectado a nuestra NAS y seguir los siguientes pasos:
+
+### 5.7.1. Almacén de claves
+
++ Lo primero será conectar una unidad de almacenamiento USB al nuestro NAS y formatear dicha unidad para proceder a utilizarla. para ello nos vamos al `Panel de control` al apartado `Dispositivos Externos` y pestaña `Dispositivos Externos`, aquí veremos que tenemos un USB conectado a nuestro NAS
+
+![imagen](/DSM-Virtual/images/USB1.jpg)
+
++ Procedemos al formateo de la unidad USB pulsando el botón `Formatear` y seleccionamos los siguientes valores.
+
+![imagen](/DSM-Virtual/images/USB2.jpg)
+
++ Tras Formatear la Unidad USB procederemos a crear el Administrador de claves y para ello nos vamos al apartado `Carpeta Compartida` y buscamos dentro de `Acción` la opción de `Administrador de claves`
+
+![imagen](/DSM-Virtual/images/claves1.jpg)
+
++ Rellenaremos los siguientes valores
+
+![imagen](/DSM-Virtual/images/claves2.jpg)
+
++ Nos pedirá confirmación de la contraseña:
+
+![imagen](/DSM-Virtual/images/claves3.jpg)
+
+Una vez realizado estos paso el administrador de claves ya estará creado, por lo cual lo siguiente será crear una nueva carpeta para cifrarla y comprobar su funcionamiento. Para ello seguiremos los siguientes pasos:
+
++ Seleccionábamos el botón `Crear` en el apartado `Carpetas Compartidas` y crearemos la carpeta `Cifrada` para realizar las pruebas.
+
+![imagen](/DSM-Virtual/images/cifrada1.jpg)
+
++ Ahora seleccionaremos las opciones de cifrado y administrador de claves.
+
+![imagen](/DSM-Virtual/images/cifrada2.jpg)
+
+> **Nota:** Existen 2 maneras de cifrar la carpeta:
+> + **_Frase de contraseña:_** Cualquiera que conozca la frase de contraseña puede eliminar el cifrado de las claves mediante este método.
+> + **_Clave de equipo:_** Tan solo el Synology NAS vinculado puede eliminar el cifrado de las claves cifradas mediante una clave de equipo.
+
++ También habilitaremos la opción de `integridad de datos avanzada`
+
+![imagen](/DSM-Virtual/images/cifrada3.jpg)
+
+> **_Habilitar la suma de comprobación para la integridad de datos avanzada:_** para proteger una carpeta compartida con estrategias de suma de comprobación CRC32 y copia en escritura, puede habilitar la suma de comprobación de datos para la integración de datos avanzada durante la creación de la carpeta compartida. Se aplica una suma de comprobación de CRC32 para verificar si los datos siguen siendo idénticos a los grabados originalmente y si el sistema utiliza automáticamente redundancia RAID para corregir los datos dañados. La copia en escritura ayuda a mejorar la consistencia de datos cuando se produce un cierre anómalo del sistema.
+
++ Nos indica un aviso que tenemos que aceptar para cifrar la carpeta:
+
+![imagen](/DSM-Virtual/images/cifrada4.jpg)
+
++ Comprobamos que nuestros usuarios del LDAP tenga acceso de escritura y lectura.
+
+![imagen](/DSM-Virtual/images/cifrada5.jpg)
+
++ Verificamos que la nueva carpeta esta creada con un candado.
+
+![imagen](/DSM-Virtual/images/cifrada6.jpg)
+
++ Por último comprobamos que en administrador de claves está reflejado nuestra carpeta.
+
+![imagen](/DSM-Virtual/images/cifrada7.jpg)
